@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MapNKU</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_open">Navigate</string>
+    <string name="drawer_closed">Closed</string>
+    <string name="google_maps_key">AIzaSyA8MWCeSLCDz1HIvoll-uZ2ZD8CJBvo_lw</string>
+
+    <string-array name="navigation_item_names">
+        <item>Map</item>
+    </string-array>
+
+
+</resources>
