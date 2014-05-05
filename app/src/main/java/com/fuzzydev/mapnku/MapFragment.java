@@ -65,7 +65,7 @@ public class MapFragment extends Fragment implements Callback<List<LocationItem>
     }
 
     private void init(View rootView) {
-        RequestManager.getInstance(getActivity()).getLocationData(mActivity, this);
+        RequestManager.getInstance(getActivity()).getLocationData(this);
     }
 
     private void setUpMapIfNeeded() {
@@ -97,6 +97,6 @@ public class MapFragment extends Fragment implements Callback<List<LocationItem>
 
     @Override
     public void failure(RetrofitError error) {
-        Toast.makeText(mActivity, "There was a network problem, check your connection and try again.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mActivity, error.getMessage(), Toast.LENGTH_SHORT).show();
     }
 }

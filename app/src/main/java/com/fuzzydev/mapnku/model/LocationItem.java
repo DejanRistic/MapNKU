@@ -13,7 +13,7 @@ public class LocationItem {
     private String floor;
     private String description;
     private String mondayTime;
-    private String tuesdauTime;
+    private String tuesdayTime;
     private String wednesdayTime;
     private String thursdayTime;
     private String fridayTime;
@@ -23,6 +23,28 @@ public class LocationItem {
 
     public LocationItem() {
         // no arg
+    }
+
+    // Constructor needed for a custom deserializer because i made the server names without thinking.
+    public LocationItem(String author, String building, String name, String lat, String lng, String floor, String description, String mondayTime, String tuesdayTime, String wednesdayTime
+            , String thursdayTime, String fridayTime, String saturdayTime, String sundayTime, String date) {
+
+        this.author = author;
+        this.building = building;
+        this.name = name;
+        this.lat = lat;
+        this.lng = lng;
+        this.floor = floor;
+        this.description = description;
+        this.mondayTime = mondayTime;
+        this.tuesdayTime = tuesdayTime;
+        this.wednesdayTime = wednesdayTime;
+        this.thursdayTime = thursdayTime;
+        this.fridayTime = fridayTime;
+        this.saturdayTime = saturdayTime;
+        this.sundayTime = sundayTime;
+        this.date = date;
+
     }
 
     public String getAuthor() {
@@ -89,12 +111,12 @@ public class LocationItem {
         this.mondayTime = mondayTime;
     }
 
-    public String getTuesdauTime() {
-        return tuesdauTime;
+    public String getTuesdayTime() {
+        return tuesdayTime;
     }
 
-    public void setTuesdauTime(String tuesdauTime) {
-        this.tuesdauTime = tuesdauTime;
+    public void setTuesdayTime(String tuesdauTime) {
+        this.tuesdayTime = tuesdauTime;
     }
 
     public String getWednesdayTime() {

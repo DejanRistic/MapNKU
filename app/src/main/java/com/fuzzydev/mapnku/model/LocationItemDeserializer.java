@@ -1,6 +1,5 @@
 package com.fuzzydev.mapnku.model;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -19,16 +18,26 @@ public class LocationItemDeserializer
     public LocationItem deserialize(JsonElement json, Type type,
                                     JsonDeserializationContext context) throws JsonParseException {
 
-        JsonArray jArray = (JsonArray) json;
+        JsonObject locationItemJson = (JsonObject) json;
 
-        LocationItem locationItem = null;
 
-        for (int i = 1; i < jArray.size(); i++) {
-            JsonObject jObject = (JsonObject) jArray.get(i);
-
-        }
+        LocationItem locationItem = new LocationItem(locationItemJson.get("Author").getAsString(),
+                locationItemJson.get("Building").getAsString(),
+                locationItemJson.get("Name").getAsString(),
+                locationItemJson.get("Lat").getAsString(),
+                locationItemJson.get("Long").getAsString(),
+                locationItemJson.get("Floor").getAsString(),
+                locationItemJson.get("Description").getAsString(),
+                locationItemJson.get("MondayTime").getAsString(),
+                locationItemJson.get("TuesdayTime").getAsString(),
+                locationItemJson.get("WednesdayTime").getAsString(),
+                locationItemJson.get("ThursdayTime").getAsString(),
+                locationItemJson.get("FridayTime").getAsString(),
+                locationItemJson.get("SaturdayTime").getAsString(),
+                locationItemJson.get("SundayTime").getAsString(),
+                locationItemJson.get("Date").getAsString());
 
         return locationItem;
     }
 }
-}
+
