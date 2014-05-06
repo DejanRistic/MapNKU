@@ -1,5 +1,8 @@
 package com.fuzzydev.mapnku.model;
 
+import android.content.Context;
+
+import com.fuzzydev.mapnku.provider.MapNkuContent.DbLocationItem;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
@@ -13,6 +16,11 @@ import java.lang.reflect.Type;
  */
 public class LocationItemDeserializer
         implements JsonDeserializer<LocationItem> {
+    private Context mContext;
+
+    public LocationItemDeserializer(Context context){
+        mContext = context;
+    }
 
     @Override
     public LocationItem deserialize(JsonElement json, Type type,
@@ -36,6 +44,8 @@ public class LocationItemDeserializer
                 locationItemJson.get("SaturdayTime").getAsString(),
                 locationItemJson.get("SundayTime").getAsString(),
                 locationItemJson.get("Date").getAsString());
+
+        mContext.getContentResolver().insert(DbLocationItem.CONTENT_URI,locationItem.toContentValues());
 
         return locationItem;
     }

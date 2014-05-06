@@ -13,12 +13,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class NavigationActivity extends ActionBarActivity {
+public class NavigationActivity extends ActionBarActivity implements MapFragment.OnDirectionRequestedListener {
 
     private String[] mNavigationItemNames;
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
+    NavigationDrawerAdapter mAdapter;
 
     private CharSequence mTitle;
     private int mCurrentItem = -1;
@@ -35,7 +36,8 @@ public class NavigationActivity extends ActionBarActivity {
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         String test = mNavigationItemNames[0];
         // Set the adapter for the list view
-        mDrawerList.setAdapter(new NavigationDrawerAdapter(this, mNavigationItemNames));
+        mAdapter = (new NavigationDrawerAdapter(this, mNavigationItemNames));
+        mDrawerList.setAdapter(mAdapter);
 
         mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
 
@@ -57,7 +59,7 @@ public class NavigationActivity extends ActionBarActivity {
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
-                getActionBar().setTitle(mDrawerTitle);
+                getActionBar().setTitle("Details");
             }
         };
 
@@ -105,7 +107,16 @@ public class NavigationActivity extends ActionBarActivity {
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+        getActionBar().setTitle("NKU");
+    }
+
+    public void openDrawer(){
+        mDrawerLayout.openDrawer(mDrawerList);
+    }
+
+    @Override
+    public void onDirectionsRequested(Bundle bundle) {
+        mAdapter.update(bundle);
     }
 
     /**

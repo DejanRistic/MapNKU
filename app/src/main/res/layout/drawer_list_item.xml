@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/item_title"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:minHeight="50dp"
-    android:textSize="35sp"
-    android:layout_gravity="center"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:textColor="@android:color/white"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/marker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitCenter"
+        android:minHeight="90dp"
+        android:src="@drawable/nku_logo" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/item_title"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_height="wrap_content" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/description"
+        android:textSize="15sp"
+        android:padding="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_height="wrap_content" />
+
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/start_label"
+        android:textSize="15sp"
+        android:padding="5dp"
+        android:text="Start:"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_height="wrap_content" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/start_address"
+        android:textSize="15sp"
+        android:padding="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_height="wrap_content" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/end_label"
+        android:textSize="15sp"
+        android:padding="5dp"
+        android:text="End:"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_height="wrap_content" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/end_address"
+        android:textSize="15sp"
+        android:padding="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/holo_blue_light"
+        android:layout_height="wrap_content" />
+
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/distance"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_height="wrap_content" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/duration"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_height="wrap_content" />
+</LinearLayout>
